@@ -1,25 +1,24 @@
 cache = {}
 
-def intersection(arrays, i = 0):
+def intersection(arrays):
     """
     YOUR CODE HERE
     """
     result = []
     # Your code here
-    if i == 0:
-        for x in arrays[0]:
-            cache[x] = 1
-    elif i < len(arrays) - 1:
-        for y in arrays[i]:
-            if y in cache and cache[y] == i:
-                cache[y] += 1
-        return intersection(arrays, i+1)
-    else:
-        for z in arrays[i]:
-            if z in cache and cache[z] == i-1:
-                result.append(z)
-        return result
-    
+    for x in arrays[0]:
+        cache[x] = 1
+    i = 1
+    while i < len(arrays) -1:
+            for y in arrays[i]:
+                if y in cache and cache[y] == i:
+                    cache[y] += 1
+            i += 1
+    for z in arrays[len(arrays)-1]:
+                if z in cache and cache[z] == i:
+                    result.append(z)
+    return result
+
     """
     for x in arrays[0]:
         cache[x] = 1
@@ -30,7 +29,6 @@ def intersection(arrays, i = 0):
         if z in cache and cache[z] == True:
             result.append(z)
     """
-    return result
 
 
 if __name__ == "__main__":
