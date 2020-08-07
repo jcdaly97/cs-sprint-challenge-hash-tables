@@ -27,3 +27,7 @@ Solve this problem with a hash table.
 Limits:
 
 * The input list can contain approximately 5,000,000 elements.
+
+loop through the array,
+if a number is positve add it to the cache
+if it's negative multiply it by -1 and see if that value is in the hash function
